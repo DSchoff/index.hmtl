@@ -1,0 +1,488 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	
+	<title>Grandma's Kitchen</title>
+	
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Mooli&family=Nunito:wght@300;400&display=swap');
+		
+		/* http://meyerweb.com/eric/tools/css/reset/ 
+		   v2.0 | 20110126
+		   License: none (public domain)
+		*/
+
+		html, body, div, span, applet, object, iframe,
+		h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+		a, abbr, acronym, address, big, cite, code,
+		del, dfn, em, img, ins, kbd, q, s, samp,
+		small, strike, strong, sub, sup, tt, var,
+		b, u, i, center,
+		dl, dt, dd, ol, ul, li,
+		fieldset, form, label, legend,
+		table, caption, tbody, tfoot, thead, tr, th, td,
+		article, aside, canvas, details, embed, 
+		figure, figcaption, footer, header, hgroup, 
+		menu, nav, output, ruby, section, summary,
+		time, mark, audio, video {
+			margin: 0;
+			padding: 0;
+			border: 0;
+			font-size: 100%;
+			font: inherit;
+			vertical-align: baseline;
+		}
+		/* HTML5 display-role reset for older browsers */
+		article, aside, details, figcaption, figure, 
+		footer, header, hgroup, menu, nav, section {
+			display: block;
+		}
+		body {
+			line-height: 1;
+		}
+		ol, ul {
+			list-style: none;
+		}
+		blockquote, q {
+			quotes: none;
+		}
+		blockquote:before, blockquote:after,
+		q:before, q:after {
+			content: '';
+			content: none;
+		}
+		table {
+			border-collapse: collapse;
+			border-spacing: 0;
+		}
+	
+		/*+++ Whitespace Styles Here +++*/
+		
+		/* Font Families
+			font-family: 'Mooli', sans-serif;
+			font-family: 'Nunito', sans-serif;
+		*/
+		
+		/* Font styles for Nunito
+			font-style: Light 300;
+			font-style: Regular 400;
+		*/
+		
+		/* Colors
+			teal blue: #61BFC3;
+			pale teal blue: #A9F6FA;
+			pale yellow: #FFF37E;
+			light purple: #D167C4;
+		*/
+		
+		body{
+			background-color: #A9F6FA;
+		}
+		
+		#wrapper{
+			width: 85%;
+			margin: 0 auto;
+			background-color: #ffffff;
+		}
+		
+		header{
+			width: 85%;
+			margin: 2% auto;
+			background-color: white;
+			padding: 2%;
+			overflow: hidden;
+			border-bottom: 2px solid #FFF37E;
+		}
+		
+		#heading-div{
+			float: left;
+		}
+		
+		#heading-div h1{
+			color: #61BFC3;
+			font-family: 'Mooli', sans-serif;
+			font-size: 2.5em;
+			font-weight: bold;
+		}
+		
+		#heading-div h2{
+			color: #61BFC3;
+			font-family: 'Mooli', sans-serif;
+			font-size: 1.5em;
+			font-weight: bold;
+			padding-left: 50%;
+		}
+		
+		.nav-item{
+			position: relative;
+			top: 45px;
+			display: inline;
+			margin-left: 4%;
+			padding-bottom: 2%;
+		}
+		
+		li.nav-item a:link,a:visited,a:active{
+			color: #61BFC3;
+			font-family: 'Mooli', sans-serif;
+			font-size: 1em;
+			font-weight: bold;
+			text-decoration: none;
+		}
+		
+		li.nav-item a:hover{
+			color: #A9F6FA;
+			font-family: 'Mooli', sans-serif;
+			font-size: 1em;
+			font-weight: bold;
+			text-decoration: none;
+		}
+		
+		#intro{
+			font-family: 'Nunito', sans-serif;
+			font-style: Light 300;
+			width: 85%;
+			margin: 2% auto;
+			background: #ffffff;
+			padding: 2%;
+			overflow: hidden;
+			border: 2px solid #FFF37E;
+			line-height: 125%;
+			letter-spacing: .05em;
+		}
+		
+		#intro h2{
+			color: #D167C4;
+			font-family: 'Nunito', sans-serif;
+			font-style: Regular 400;
+			font-weight: bold;
+			font-size: 2em;
+			padding-bottom: 2%;
+		}
+		
+		.intro-fig{
+			background-color: #FFF37E;
+			width: 30%;
+			float: left;
+		}
+		
+		figcaption{
+			padding: 2%;
+		}
+		
+		#intro-text{
+			width: 68%;
+			float: left;
+			margin-left: 2%;
+		}
+		
+		#recipe-box{
+			width: 85%;
+			margin: 0% auto;
+			background-color: white;
+			padding: 2%;
+		}
+		
+		#main-content{
+			font-family: 'Nunito', sans-serif;
+			font-style: Light 300;
+			background-color: white;
+			width: 62%;
+			padding: 2%;
+			float: left;
+			border-right: 2px solid #FFF37E;
+			line-height: 125%;
+			letter-spacing: .05em;
+		}
+		
+		#main-content h3{
+			color: #D167C4;
+			font-size: 1.75em;
+			line-height: 125%;
+			letter-spacing: .05em;
+		}
+		
+		#main-content ul li{
+			list-style: none;
+			padding-left: 2%;
+		}
+		
+		#main-content ul li::before{
+			padding-right: 1%;
+            content: "\00BB";
+        }
+		
+		ol {
+            list-style: none;
+            counter-reset: num;
+        }
+  
+        ol li {
+			padding: 1%;
+            counter-increment: num;
+        }
+  
+        ol li::before {
+			padding-right: 1%;
+            content: counter(num);
+            color: #D167C4;
+            font-size: 1.75em;
+            font-family: 'Nunito', sans-serif;
+			font-style: Regular 400;
+            font-weight: bold;
+        }
+		
+		#Nutrition-Facts-Box{
+			font-family: 'Nunito', sans-serif;
+			font-style: Light 300;
+			background-color: white;
+			width: 28%;
+			padding: 2%;
+			float: left;
+		}
+		
+		.small-fig{
+			background-color: #FFF37E;
+			clear: left;
+			float: right;
+			width: 40%;
+		}
+		
+		img{
+			width: 100%;
+		}
+		
+		footer{
+			color: #61BFC3;
+			font-family: 'Mooli', sans-serif;
+			font-weight: bold;
+			clear: left;
+			width: 85%;
+			margin: 0% auto;
+			padding: 2%;
+			border-top: 2px solid #FFF37E;
+		}
+		
+		#Nutrition-Facts-Box{
+			border: 1px solid black;
+			padding: 1%;
+			margin-left: 2%;
+		}
+		
+		table{
+			border-collapse: collapse;
+		}
+		
+		tr{
+			padding: 2% 0%;
+			border-bottom: 1px solid black;
+		}
+		
+		td{
+			padding: 2% 0%;
+		}
+		
+		th{
+			padding: 2% 0%;
+			font-size: 14px;
+			font-weight: bold;
+			text-align: left;
+		}
+		
+		#main-label{
+			font-weight: bold;
+			font-size: 28px;
+		}
+		
+		.nutrition-content{
+			font-size: 14px;
+			border-bottom: 1px solid black;
+			padding: 2% 0%;
+		}
+		
+		#box-header{
+			border-bottom: 10px solid black;
+			
+		}
+		
+		.small-label{
+			font-size: 12px;
+			border-bottom: 1px solid black;
+		}
+		
+		.small-label-right{
+			font-size: 11px;
+			border-bottom: 1px solid black;
+			text-align: right;
+		}
+		
+		#medium-border{
+			border-bottom: 5px solid black;
+			font-size: 14px;
+		}
+		
+		.percent-right{
+			text-align: right;
+			font-size: 14px;
+			border-bottom: 1px solid black;
+			font-weight: bold;
+		}
+		
+		#vitamin-start{
+			border-top: 10px solid black;
+		}
+		
+		.small-text{
+			font-size: 9px;
+			padding-top: 1%;
+		}
+		
+		.gap-space{
+			width: .5em;
+		}
+		
+	</style>
+	
+	<!--[if lt IE9]>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="wrapper">
+		<header>
+			<div id="heading-div">
+				<h1>Grandma's</h1>
+				<h2>Kitchen</h2>
+			</div>
+			
+			<nav>
+				<ul>
+					<li class="nav-item"><a href="page1.html">Home</a></li>
+					<li class="nav-item"><a href="page2.html">Caramel Bar's</a></li>
+					<li class="nav-item"><a href="page3.html">Scotcheroos</a></li>
+					<li class="nav-item"><a href="page4.html">Carrot Bars</a></li>
+					<li class="nav-item"><a href="page5.html">Reese's Cookies</a></li>
+				</ul>
+			</nav>
+		</header>
+		
+		<div id="intro">
+			<h2>Reese's Peanut Butter Cup Cookies</h2>
+			<figure class="intro-fig">
+				<img src="images\reesecookie2.jpg" />
+				<figcaption>Cookie good</figcaption>
+			</figure>
+			<article>
+				<p id="intro-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus gravida quis blandit turpis cursus in. Mattis rhoncus urna neque viverra justo nec. Augue eget arcu dictum varius duis at consectetur lorem. Sed arcu non odio euismod lacinia at quis. Tempor nec feugiat nisl pretium fusce id velit. Tempor nec feugiat nisl pretium. Commodo odio aenean sed adipiscing diam. Ornare arcu odio ut sem. Fames ac turpis egestas sed tempus. Quis lectus nulla at volutpat diam ut venenatis tellus in. Congue nisi vitae suscipit tellus mauris a diam.</p>
+			</article>
+		</div>
+		
+		<div id="recipe-box">
+			<div id="main-content">
+				<article>
+					<h3>Ingredients</h3>
+					<figure class="small-fig">
+						<img src="images\reesecookie1.jpg" />
+						<figcaption>i know right?</figcaption>
+					</figure>
+					<ul>
+						<li>1/2 Cup Butter</li>
+						<li>3/4 Cup Smooth Peanut Butter</li>
+						<li>1/2 Cup White Sugar</li>
+						<li>1/2 Cup Brown Sugar</li>
+						<li>2 Eggs</li>
+						<li>1 TSP Vanilla</li>
+						<li>1 Cup Flour</li>
+						<li>1/2 TSP Baking Soda</li>
+						<li>1/4 TSP Salt</li>
+						<li>1 Cup Oatmeal</li>
+						<li>Mini Peanut Butter Cups</li>
+					</ul>
+					
+					<h3>Directions</h3>
+					<ol>
+						<li>Beat butter and peanut butter till light and fluffy.</li>
+						<li>Cream mixture with white and brown sugar.</li>
+						<li>Add eggs and vanilla, and mix well.</li>
+						<li>Sift in flour, baking soda, and salt. Mix till just combined.</li>
+						<li>Stir in oatmeal</li>
+						<li>Refriderate dough until firm.</li>
+						<li>Preheat oven to 350&deg;F</li>
+						<li>Grease 1 1/2in muffin tins.</li>
+						<li>Roll dough into 1 inch balls.</li>
+						<li>Bake 9-11 minutes.</li>
+						<li>Remove from oven and press peanut butter cup into the center.</li>
+						<li>Cool on parchment paper.</li>
+					</ol>
+				</article>
+			</div>
+			<div id="Nutrition-Facts-Box">
+				<div id="box-header">
+					<div id="main-label">Nutrition Facts</div>
+					<div class="nutrition-content">Serving Size 1 cookie</div>
+					<div class="nutrition-content">Serving Per Container 48</div>
+				</div>
+				<table>
+					<tr>
+						<td colspan="3" class="small-label">Amount Per Serving</td>
+					</tr>
+					<tr id="medium-border">
+						<th colspan="3">Calories 74</th>
+					</tr>
+					<tr>
+						<td colspan="3" class="small-label-right"><b>% Daily Value*</b></td>
+					</tr>
+					<tr>
+						<th colspan="2" class="nutrition-content">Total Fat 4.3g</th>
+						<td class="percent-right"><b>6%</b></td>
+					</tr>
+					<tr>
+						<td class="gap-space"></td>
+						<td class="nutrition-content">Saturated Fat 1.7g</td>
+						<td class="percent-right"><b>9%</b></td>
+					</tr>
+					<tr>
+						<th colspan="2" class="nutrition-content">Cholesterol 12mg</th>
+						<td class="percent-right"><b>4%</b></td>
+					</tr>
+					<tr>
+						<th colspan="2" class="nutrition-content">Sodium 43mg</th>
+						<td class="percent-right"><b>2%</b></td>
+					</tr>
+					<tr>
+						<th colspan="2" class="nutrition-content">Total Carbohydrate 7.6g</th>
+						<td class="percent-right"><b>3%</b></td>
+					</tr>
+					<tr>
+						<td class="gap-space"></td>
+						<td class="nutrition-content">Dietary Fiber 0.5g</td>
+						<td class="percent-right"><b>2%</b></td>
+					</tr>
+					<tr>
+						<td class="gap-space"></td>
+						<td class="nutrition-content">Sugar 4.1g</td>
+					</tr>
+					<tr>
+						<th colspan="3" class="nutrition-content">Protein 1.8g</th>
+					</tr>
+					<tr id="vitamin-start">
+						<td colspan="2" class="nutrition-content">Vitamin A 2mcg 9%</td>
+						<td class="nutrition-content">&#x2022; Calcium 6mg 1%</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="nutrition-content">Iron 0mg 1%</td>
+						<td class="nutrition-content">&#x2022; Potassium 40mg 1%</td>
+					</tr>
+					
+				</table>
+				<p class="small-text">* Percent Daily Values are based on a 2,000 calorie diet. Your daily values may be higher or lower depending on your calorie needs:</p>
+			</div>
+		</div>
+		
+		<footer>
+			<p><small>TM David Schoff 2023</small></p>
+		</footer>
+		
+	</div><!--close wrapper div-->
+</body>

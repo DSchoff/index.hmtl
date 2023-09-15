@@ -1,0 +1,279 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	
+	<title>Grandma's Kitchen</title>
+	
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Mooli&family=Nunito:wght@300;400&display=swap');
+		
+		/* http://meyerweb.com/eric/tools/css/reset/ 
+		   v2.0 | 20110126
+		   License: none (public domain)
+		*/
+
+		html, body, div, span, applet, object, iframe,
+		h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+		a, abbr, acronym, address, big, cite, code,
+		del, dfn, em, img, ins, kbd, q, s, samp,
+		small, strike, strong, sub, sup, tt, var,
+		b, u, i, center,
+		dl, dt, dd, ol, ul, li,
+		fieldset, form, label, legend,
+		table, caption, tbody, tfoot, thead, tr, th, td,
+		article, aside, canvas, details, embed, 
+		figure, figcaption, footer, header, hgroup, 
+		menu, nav, output, ruby, section, summary,
+		time, mark, audio, video {
+			margin: 0;
+			padding: 0;
+			border: 0;
+			font-size: 100%;
+			font: inherit;
+			vertical-align: baseline;
+		}
+		/* HTML5 display-role reset for older browsers */
+		article, aside, details, figcaption, figure, 
+		footer, header, hgroup, menu, nav, section {
+			display: block;
+		}
+		body {
+			line-height: 1;
+		}
+		ol, ul {
+			list-style: none;
+		}
+		blockquote, q {
+			quotes: none;
+		}
+		blockquote:before, blockquote:after,
+		q:before, q:after {
+			content: '';
+			content: none;
+		}
+		table {
+			border-collapse: collapse;
+			border-spacing: 0;
+		}
+	
+		/*+++ Whitespace Styles Here +++*/
+		
+		/* Font Families
+			font-family: 'Mooli', sans-serif;
+			font-family: 'Nunito', sans-serif;
+		*/
+		
+		/* Font styles for Nunito
+			font-style: Light 300;
+			font-style: Regular 400;
+		*/
+		
+		/* Colors
+			teal blue: #61BFC3;
+			pale teal blue: #A9F6FA;
+			pale yellow: #FFF37E;
+			light purple: #D167C4;
+		*/
+		
+		body{
+			background-color: #A9F6FA;
+		}
+		
+		#wrapper{
+			width: 85%;
+			margin: 0 auto;
+			background-color: #ffffff;
+		}
+		
+		#content-wrapper{
+			width: 85%;
+			margin: 0 auto;
+		}
+		
+		header{
+			width: 85%;
+			margin: 2% auto;
+			background-color: white;
+			padding: 2%;
+			overflow: hidden;
+			border-bottom: 2px solid #FFF37E;
+		}
+		
+		#heading-div{
+			float: left;
+		}
+		
+		#heading-div h1{
+			color: #61BFC3;
+			font-family: 'Mooli', sans-serif;
+			font-size: 2.5em;
+			font-weight: bold;
+		}
+		
+		#heading-div h2{
+			color: #61BFC3;
+			font-family: 'Mooli', sans-serif;
+			font-size: 1.5em;
+			font-weight: bold;
+			padding-left: 50%;
+		}
+		
+		.nav-item{
+			position: relative;
+			top: 45px;
+			display: inline;
+			margin-left: 4%;
+			padding-bottom: 2%;
+		}
+		
+		li.nav-item a:link,a:visited,a:active{
+			color: #61BFC3;
+			font-family: 'Mooli', sans-serif;
+			font-size: 1em;
+			font-weight: bold;
+			text-decoration: none;
+		}
+		
+		li.nav-item a:hover{
+			color: #A9F6FA;
+			font-family: 'Mooli', sans-serif;
+			font-size: 1em;
+			font-weight: bold;
+			text-decoration: none;
+		}
+		
+		figcaption{
+			padding: 2%;
+		}
+		
+		#main-content{
+			font-family: 'Nunito', sans-serif;
+			font-style: Light 300;
+			background-color: white;
+			width: 56%;
+			float: left;
+			border-right: 2px solid #FFF37E;
+			line-height: 125%;
+			letter-spacing: .05em;
+			padding: 2%;
+		}
+		
+		h2{
+			color: #D167C4;
+			font-family: 'Nunito', sans-serif;
+			font-style: Regular 400;
+			font-weight: bold;
+			font-size: 2em;
+			padding-bottom: 2%;
+		}
+		
+		p{
+			padding: 2% 0;
+		}
+		
+		blockquote{
+			font-size: 1.5em;
+			font-family: 'Nunito', sans-serif;
+			font-style: Regular 400;
+			line-height: 1.5em;
+			margin: 1% 1%;
+			background-color: #A9F6FA;
+			padding: 2%;
+			border-left: 10px solid #D167C4;
+		}
+		
+		blockquote:before{
+			position: relative;
+			vertical-align: -.25em;
+			top: 25px;
+			font-size: 5em;
+			content: "\201C";
+			color: #D167C4;
+		}
+		
+		#main-content h3{
+			color: #D167C4;
+			font-size: 1.75em;
+			line-height: 125%;
+			letter-spacing: .05em;
+		}
+		
+		#side-content{
+			font-family: 'Nunito', sans-serif;
+			font-style: Light 300;
+			background-color: white;
+			width: 35%;
+			float: left;
+			line-height: 125%;
+			letter-spacing: .05em;
+			padding: 2%
+		}
+		
+		img{
+			width: 100%;
+		}
+		
+		footer{
+			color: #61BFC3;
+			font-family: 'Mooli', sans-serif;
+			font-weight: bold;
+			clear: left;
+			width: 100%;
+			margin: 0% auto;
+			padding: 2%;
+			border-top: 2px solid #FFF37E;
+		}
+		
+	</style>
+	
+	<!--[if lt IE9]>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="wrapper">
+		<header>
+			<div id="heading-div">
+				<h1>Grandma's</h1>
+				<h2>Kitchen</h2>
+			</div>
+			
+			<nav>
+				<ul>
+					<li class="nav-item"><a href="page1.html">Home</a></li>
+					<li class="nav-item"><a href="page2.html">Caramel Bar's</a></li>
+					<li class="nav-item"><a href="page3.html">Scotcheroos</a></li>
+					<li class="nav-item"><a href="page4.html">Carrot Bars</a></li>
+					<li class="nav-item"><a href="page5.html">Reese's Cookies</a></li>
+				</ul>
+			</nav>
+		</header>
+		
+		<div id="content-wrapper">
+			<div id="main-content">
+				<article>
+					<h2>Grandma's Story</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet consectetur adipiscing elit duis. Dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Sed blandit libero volutpat sed cras ornare arcu. Elit duis tristique sollicitudin nibh. Leo a diam sollicitudin tempor id eu nisl nunc mi. Faucibus in ornare quam viverra orci sagittis eu volutpat odio. Platea dictumst quisque sagittis purus sit amet volutpat consequat. Tellus elementum sagittis vitae et leo duis ut diam. Consequat id porta nibh venenatis cras sed felis eget. Amet purus gravida quis blandit turpis. Morbi tristique senectus et netus et malesuada fames ac. Amet nisl purus in mollis nunc sed id.</p>
+					<blockquote>
+					Elit duis tristique sollicitudin nibh. Leo a diam sollicitudin tempor id eu nisl nunc mi. Faucibus in ornare quam viverra orci sagittis eu volutpat odio.
+					</blockquote>
+					<p>Lectus proin nibh nisl condimentum id. Pellentesque habitant morbi tristique senectus. Pellentesque id nibh tortor id aliquet lectus proin. Sit amet volutpat consequat mauris. Habitasse platea dictumst vestibulum rhoncus est pellentesque elit. Duis ultricies lacus sed turpis tincidunt id aliquet risus. Aliquam faucibus purus in massa tempor nec feugiat. Eget velit aliquet sagittis id consectetur purus ut faucibus pulvinar. Aliquet nec ullamcorper sit amet. Aenean et tortor at risus viverra adipiscing at. Sem nulla pharetra diam sit amet nisl suscipit adipiscing bibendum. Pharetra et ultrices neque ornare aenean. Tempor nec feugiat nisl pretium fusce id velit ut tortor. Arcu cursus vitae congue mauris rhoncus aenean.</p>
+					<p>Consectetur adipiscing elit pellentesque habitant. Amet aliquam id diam maecenas ultricies. Mi eget mauris pharetra et ultrices neque ornare aenean euismod. Ac ut consequat semper viverra nam. Neque ornare aenean euismod elementum nisi quis eleifend quam. Eu tincidunt tortor aliquam nulla facilisi cras fermentum. Dignissim cras tincidunt lobortis feugiat vivamus at augue. Nulla facilisi nullam vehicula ipsum a arcu. Semper risus in hendrerit gravida rutrum quisque non tellus orci. Ornare arcu dui vivamus arcu felis bibendum ut tristique et. Porta lorem mollis aliquam ut porttitor leo a. In nulla posuere sollicitudin aliquam ultrices sagittis. Lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare. Gravida in fermentum et sollicitudin ac. Lorem dolor sed viverra ipsum nunc aliquet bibendum enim.</p>
+				</article>
+			</div>
+			<div id="side-content">
+				<article>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet consectetur adipiscing elit duis. Dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Sed blandit libero volutpat sed cras ornare arcu. Elit duis tristique sollicitudin nibh. Leo a diam sollicitudin tempor id eu nisl nunc mi. Faucibus in ornare quam viverra orci sagittis eu volutpat odio. Platea dictumst quisque sagittis purus sit amet volutpat consequat. Tellus elementum sagittis vitae et leo duis ut diam. Consequat id porta nibh venenatis cras sed felis eget. Amet purus gravida quis blandit turpis. Morbi tristique senectus et netus et malesuada fames ac. Amet nisl purus in mollis nunc sed id.</p>
+					<p>Lectus proin nibh nisl condimentum id. Pellentesque habitant morbi tristique senectus. Pellentesque id nibh tortor id aliquet lectus proin. Sit amet volutpat consequat mauris. Habitasse platea dictumst vestibulum rhoncus est pellentesque elit. Duis ultricies lacus sed turpis tincidunt id aliquet risus. Aliquam faucibus purus in massa tempor nec feugiat. Eget velit aliquet sagittis id consectetur purus ut faucibus pulvinar. Aliquet nec ullamcorper sit amet. Aenean et tortor at risus viverra adipiscing at. Sem nulla pharetra diam sit amet nisl suscipit adipiscing bibendum. Pharetra et ultrices neque ornare aenean. Tempor nec feugiat nisl pretium fusce id velit ut tortor. Arcu cursus vitae congue mauris rhoncus aenean.</p>
+				</article>
+			</div>
+		
+		<footer>
+			<p><small>TM David Schoff 2023</small></p>
+		</footer>
+		
+		</div>
+	</div><!--close wrapper div-->
+</body>
